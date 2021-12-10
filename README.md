@@ -34,6 +34,19 @@ To be able to use SolrCloud with entando we need to create the `entando` collect
 curl "http://[namespace]-solr-solrcloud.[suffix_domain]/solr/admin/collections?action=CREATE&name=entando&numShards=1&replicationFactor=3&maxShardsPerNode=2&collection.configName=_default"
 ```
 
+## Configure entando `server-deployment` to connect and use Solr instead of Lucene.
+
+```yaml
+...
+spec:
+  containers:
+  - env:
+    - name: SOLR_ADDRESS
+      value: http://solr-solrcloud-common/solr
+...
+```
+
+
 ## References
 
 - https://artifacthub.io/packages/helm/apache-solr/solr-operator
