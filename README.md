@@ -31,7 +31,7 @@ kubectl get solrclouds -w
 To be able to use SolrCloud with entando we need to create the `entando` collection:
 
 ```bash
-curl "http://[namespace]-solr-solrcloud.[suffix_domain]/solr/admin/collections?action=CREATE&name=entando&numShards=1&replicationFactor=3&maxShardsPerNode=2&collection.configName=_default"
+curl "http://[namespace]-solr-solrcloud.[suffix_domain]/solr/admin/collections?action=CREATE&name=entando&numShards=1&replicationFactor=3&maxShardsPerNode=2"
 ```
 
 ## Configure entando `server-deployment` to connect and use Solr instead of Lucene.
